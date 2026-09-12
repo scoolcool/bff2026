@@ -1,0 +1,81 @@
+---
+import "../styles/header.css";
+import { translations, type Language } from "../data/translations";
+
+interface Props {
+  lang?: Language;
+}
+
+const { lang = "uk" } = Astro.props;
+const t = translations[lang].header;
+
+const isEnglish = lang === "en";
+---
+
+<header class="site-header">
+  <div class="container header-inner">
+
+    <a
+      class="header-brand"
+      href={isEnglish ? "/en/" : "/"}
+      aria-label="Blockchain Forensics Forum 2026"
+    >
+      <img
+        class="logo logo-kndise"
+        src="/images/logos/kndise.svg"
+        alt="KNDIFE"
+      />
+
+      <span class="logo-divider"></span>
+
+      <img
+        class="logo logo-minjust"
+        src="/images/logos/minjust.svg"
+        alt="Ministry of Justice of Ukraine"
+      />
+    </a>
+
+    <nav class="main-nav">
+      <a href="#about">{t.about}</a>
+      <a href="#panels">{t.panels}</a>
+      <a href="#audience">{t.audience}</a>
+      <a href="#speakers">{t.speakers}</a>
+      <a href="#partners">{t.partners}</a>
+      <a href="#dates">{t.dates}</a>
+      <a href="#requirements">{t.requirements}</a>
+      <a href="#contacts">{t.contacts}</a>
+    </nav>
+
+    <div class="header-actions">
+
+      <div class="language-switch">
+        {
+          isEnglish ? (
+            <>
+              <a href="/">UA</a>
+              <span>/</span>
+              <span class="active">EN</span>
+            </>
+          ) : (
+            <>
+              <span class="active">UA</span>
+              <span>/</span>
+              <a href="/en/">EN</a>
+            </>
+          )
+        }
+      </div>
+
+      <a
+        class="header-register"
+        href="https://docs.google.com/forms/d/e/1FAIpQLSc2ofIiUtdtdjV0MeszjOgk3RupPV5RF0k7XQEZiM9u2S9yGg/viewform?usp=publish-editor"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {t.register}
+      </a>
+
+    </div>
+
+  </div>
+</header>

@@ -1,0 +1,200 @@
+.registration {
+  position: relative;
+  overflow: hidden;
+
+  min-height: 620px;
+
+  display: flex;
+  align-items: center;
+
+  background: #0e0e10;
+  color: white;
+}
+
+.registration-grid {
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.05) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.05) 1px,
+      transparent 1px
+    );
+
+  background-size: 84px 84px;
+
+  pointer-events: none;
+}
+
+.registration-glow {
+  position: absolute;
+
+  border-radius: 50%;
+
+  filter: blur(60px);
+
+  pointer-events: none;
+}
+
+.registration-glow-one {
+  width: 620px;
+  height: 620px;
+
+  right: -180px;
+  top: -100px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(104, 40, 255, 0.42),
+      transparent 68%
+    );
+}
+
+.registration-glow-two {
+  width: 380px;
+  height: 380px;
+
+  left: 8%;
+  bottom: -180px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(63, 70, 255, 0.2),
+      transparent 70%
+    );
+}
+
+.registration-inner {
+  position: relative;
+  z-index: 2;
+}
+
+.registration-label {
+  margin-bottom: 34px;
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.registration-content {
+  max-width: 970px;
+}
+
+.registration-content h2 {
+  margin: 0;
+
+  font-family: "Unbounded", sans-serif;
+  font-size: clamp(48px, 7vw, 105px);
+  line-height: 0.92;
+  letter-spacing: -0.065em;
+}
+
+.registration-content h2 span {
+  display: block;
+  color: var(--purple);
+
+  text-shadow:
+    0 0 32px rgba(104, 40, 255, 0.2);
+}
+
+.registration-content p {
+  max-width: 690px;
+
+  margin: 34px 0 0;
+
+  font-size: 17px;
+  line-height: 1.65;
+
+  color: rgba(255, 255, 255, 0.64);
+}
+
+.registration-button {
+  width: fit-content;
+
+  margin-top: 38px;
+  padding: 16px 23px;
+
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  border-radius: 999px;
+
+  background: var(--purple);
+  color: white;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  box-shadow:
+    0 0 22px rgba(104, 40, 255, 0.3);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.registration-button:hover {
+  transform: translateY(-3px);
+
+  background: #7940ff;
+
+  box-shadow:
+    0 0 34px rgba(104, 40, 255, 0.5);
+}
+
+.registration-button span {
+  font-size: 18px;
+}
+
+.registration-mark {
+  position: absolute;
+  right: 0;
+  bottom: -15px;
+
+  font-family: "Unbounded", sans-serif;
+  font-size: clamp(50px, 9vw, 140px);
+  font-weight: 700;
+  letter-spacing: -0.07em;
+
+  color: rgba(255, 255, 255, 0.035);
+
+  pointer-events: none;
+}
+
+@media (max-width: 700px) {
+
+  .registration {
+    min-height: 560px;
+  }
+
+  .registration-grid {
+    background-size: 56px 56px;
+  }
+
+  .registration-content h2 {
+    font-size: clamp(42px, 14vw, 70px);
+  }
+
+  .registration-content p {
+    font-size: 15px;
+  }
+
+  .registration-button {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+}

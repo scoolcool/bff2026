@@ -1,0 +1,107 @@
+---
+import "../styles/hero.css";
+import { translations, type Language } from "../data/translations";
+
+interface Props {
+  lang?: Language;
+}
+
+const { lang = "uk" } = Astro.props;
+const t = translations[lang].hero;
+---
+
+<section class="hero">
+  <div class="hero-grid"></div>
+
+  <div class="container hero-inner">
+    <div class="hero-content">
+      <div class="hero-kicker">
+        {t.kicker}
+      </div>
+
+      <h1>
+        <span>{t.title1}</span>
+        <span>{t.title2}</span>
+
+        <span class="accent-line">
+          {t.title3} {t.title4}
+        </span>
+      </h1>
+
+      <p class="hero-subtitle">
+        {t.subtitle}
+      </p>
+
+      <div class="hero-actions">
+        <a
+          class="btn btn-primary"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSc2ofIiUtdtdjV0MeszjOgk3RupPV5RF0k7XQEZiM9u2S9yGg/viewform?usp=publish-editor"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {t.register}
+        </a>
+
+        <a
+          class="btn btn-secondary"
+          href="/documents/bff2026-info.pdf"
+          target="_blank"
+        >
+          {t.download}
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <img
+        class="coin coin-main"
+        src="/images/decor/Bitcoin_3D.png"
+        alt=""
+        aria-hidden="true"
+      />
+
+      <img
+        class="coin coin-secondary"
+        src="/images/decor/USD Coin_3D.png"
+        alt=""
+        aria-hidden="true"
+      />
+    </div>
+
+    <div class="hero-meta">
+      <div>
+        <span class="meta-label">
+          {t.meta.cityLabel}
+        </span>
+
+        <strong>
+          {t.meta.cityValue}
+        </strong>
+      </div>
+
+      <div>
+        <span class="meta-label">
+          {t.meta.formatLabel}
+        </span>
+
+        <strong>
+          {t.meta.formatValue}
+        </strong>
+      </div>
+
+      <div>
+        <span class="meta-label">
+          {t.meta.participationLabel}
+        </span>
+
+        <strong>
+          {t.meta.participationValue}
+        </strong>
+      </div>
+
+      <div class="hashtag">
+        {t.meta.hashtag}
+      </div>
+    </div>
+  </div>
+</section>

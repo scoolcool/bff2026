@@ -1,0 +1,94 @@
+---
+import "../styles/requirements.css";
+import { translations, type Language } from "../data/translations";
+
+interface Props {
+  lang?: Language;
+}
+
+const { lang = "uk" } = Astro.props;
+const t = translations[lang].requirements;
+---
+
+<section id="requirements" class="section section-light requirements">
+  <div class="requirements-grid-bg"></div>
+
+  <div class="container requirements-inner">
+
+    <div class="requirements-heading">
+      <div>
+        <div class="section-label">
+          {t.label}
+        </div>
+
+        <h2 class="section-title">
+          {t.title}
+          <span>{t.titleAccent}</span>
+        </h2>
+      </div>
+
+      <p class="requirements-intro">
+        {t.intro}
+      </p>
+    </div>
+
+    <div class="requirements-main">
+
+      <div class="technical-block">
+        <h3>{t.technicalTitle}</h3>
+
+        <div class="technical-list">
+          {
+            t.technical.map((item, index) => (
+              <article class="technical-item">
+                <span class="technical-number">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+
+                <div>
+                  <h4>{item.title}</h4>
+                  <p>{item.text}</p>
+                </div>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+
+      <div class="requirements-side">
+
+        <article class="requirement-box integrity-box">
+          <span class="requirement-tag">
+            INTEGRITY
+          </span>
+
+          <h3>{t.integrityTitle}</h3>
+          <p>{t.integrityText}</p>
+        </article>
+
+        <article class="requirement-box warning-box">
+          <span class="requirement-tag">
+            WARNING
+          </span>
+
+          <h3>{t.restrictionsTitle}</h3>
+          <p>{t.restrictionsText}</p>
+        </article>
+
+        <div class="responsibility">
+          {t.responsibility}
+        </div>
+
+        <a
+          class="requirements-download"
+          href="/documents/bff2026-template.docx"
+        >
+          <span>↓</span>
+          {t.download}
+        </a>
+
+      </div>
+
+    </div>
+  </div>
+</section>

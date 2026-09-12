@@ -1,0 +1,83 @@
+---
+import "../styles/panels.css";
+import { translations, type Language } from "../data/translations";
+
+interface Props {
+  lang?: Language;
+}
+
+const { lang = "uk" } = Astro.props;
+const t = translations[lang].panels;
+---
+
+<section id="panels" class="section section-dark panels">
+  <div class="panels-grid-bg"></div>
+
+  <div class="container panels-inner">
+
+    <div class="panels-heading">
+      <div class="panels-title">
+        <div class="section-label">
+          {t.label}
+        </div>
+
+        <h2 class="section-title">
+          {t.title}
+          <span>{t.titleAccent}</span>
+        </h2>
+      </div>
+
+      <p class="panels-intro">
+        {t.intro}
+      </p>
+    </div>
+
+    <div class="panels-list">
+
+      {
+        t.items.map((panel) => (
+          <article
+            class:list={[
+              "panel-card",
+              panel.number === "01" && "panel-card-primary"
+            ]}
+          >
+            <div class="panel-top">
+              <span class="panel-number">
+                {panel.number}
+              </span>
+
+              <span class="panel-badge">
+                {panel.badge}
+              </span>
+            </div>
+
+            <div class="panel-content">
+              <h3>
+                {panel.title}
+              </h3>
+
+              <p class="panel-description">
+                {panel.description}
+              </p>
+
+              <ul class="panel-topics">
+                {
+                  panel.topics.map((topic) => (
+                    <li>{topic}</li>
+                  ))
+                }
+              </ul>
+            </div>
+
+            <div class="panel-footer">
+              <span>{panel.footer}</span>
+              <span class="panel-arrow">↗</span>
+            </div>
+          </article>
+        ))
+      }
+
+    </div>
+  </div>
+</section>

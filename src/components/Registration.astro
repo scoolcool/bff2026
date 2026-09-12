@@ -1,0 +1,51 @@
+---
+import "../styles/registration.css";
+import { translations, type Language } from "../data/translations";
+
+interface Props {
+  lang?: Language;
+}
+
+const { lang = "uk" } = Astro.props;
+const t = translations[lang].registration;
+---
+
+<section class="section registration">
+  <div class="registration-grid"></div>
+
+  <div class="registration-glow registration-glow-one"></div>
+  <div class="registration-glow registration-glow-two"></div>
+
+  <div class="container registration-inner">
+
+    <div class="registration-label">
+      {t.label}
+    </div>
+
+    <div class="registration-content">
+      <h2>
+        {t.title}
+        <span>{t.titleAccent}</span>
+      </h2>
+
+      <p>
+        {t.text}
+      </p>
+
+      <a
+        class="registration-button"
+        href="https://docs.google.com/forms/d/e/1FAIpQLSc2ofIiUtdtdjV0MeszjOgk3RupPV5RF0k7XQEZiM9u2S9yGg/viewform?usp=publish-editor"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {t.button}
+        <span>↗</span>
+      </a>
+    </div>
+
+    <div class="registration-mark">
+      #BFF2026
+    </div>
+
+  </div>
+</section>

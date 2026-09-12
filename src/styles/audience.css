@@ -1,0 +1,212 @@
+.audience {
+  position: relative;
+  overflow: hidden;
+}
+
+.audience-grid {
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(17, 17, 17, 0.04) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(17, 17, 17, 0.04) 1px,
+      transparent 1px
+    );
+
+  background-size: 84px 84px;
+
+  pointer-events: none;
+}
+
+.audience-inner {
+  position: relative;
+  z-index: 2;
+}
+
+.audience-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.5fr);
+  gap: 80px;
+  align-items: end;
+
+  margin-bottom: 70px;
+}
+
+.audience-heading .section-title span {
+  display: block;
+  color: var(--purple);
+}
+
+.audience-intro {
+  max-width: 430px;
+
+  margin: 0 0 8px;
+
+  font-size: 16px;
+  line-height: 1.65;
+
+  color: rgba(17, 17, 17, 0.58);
+}
+
+.audience-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  border-top: 1px solid var(--border-dark);
+  border-left: 1px solid var(--border-dark);
+}
+
+.audience-card {
+  position: relative;
+
+  min-height: 290px;
+
+  padding: 30px;
+
+  border-right: 1px solid var(--border-dark);
+  border-bottom: 1px solid var(--border-dark);
+
+  background: rgba(255, 255, 255, 0.16);
+
+  overflow: hidden;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.audience-card::before {
+  content: "";
+
+  position: absolute;
+
+  width: 250px;
+  height: 250px;
+
+  right: -120px;
+  top: -120px;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(104, 40, 255, 0.12),
+    transparent 70%
+  );
+
+  opacity: 0;
+
+  transition: opacity 0.3s ease;
+}
+
+.audience-card:hover {
+  background: rgba(104, 40, 255, 0.04);
+}
+
+.audience-card:hover::before {
+  opacity: 1;
+}
+
+.audience-card-top {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 70px;
+}
+
+.audience-number {
+  font-family: "Unbounded", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+
+  color: var(--purple);
+}
+
+.audience-dot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: var(--purple);
+
+  box-shadow:
+    0 0 12px rgba(104, 40, 255, 0.55);
+}
+
+.audience-card h3 {
+  position: relative;
+  z-index: 2;
+
+  max-width: 320px;
+
+  margin: 0;
+
+  font-family: "Unbounded", sans-serif;
+  font-size: clamp(18px, 1.6vw, 25px);
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+
+  color: #111;
+}
+
+.audience-card p {
+  position: relative;
+  z-index: 2;
+
+  max-width: 330px;
+
+  margin: 18px 0 0;
+
+  font-size: 13px;
+  line-height: 1.55;
+
+  color: rgba(17, 17, 17, 0.6);
+}
+
+@media (max-width: 1000px) {
+
+  .audience-heading {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+
+  .audience-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+@media (max-width: 650px) {
+
+  .audience-grid {
+    background-size: 56px 56px;
+  }
+
+  .audience-heading {
+    margin-bottom: 45px;
+  }
+
+  .audience-list {
+    grid-template-columns: 1fr;
+  }
+
+  .audience-card {
+    min-height: 240px;
+  }
+
+  .audience-card-top {
+    margin-bottom: 48px;
+  }
+
+}

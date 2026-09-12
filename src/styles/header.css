@@ -1,0 +1,160 @@
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  z-index: 100;
+
+  background: rgba(10, 10, 12, 0.72);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.header-inner {
+  height: 82px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 32px;
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  flex-shrink: 0;
+}
+
+.logo {
+  display: block;
+  width: auto;
+  object-fit: contain;
+}
+
+.logo-kndise {
+  height: 43px;
+}
+
+.logo-minjust {
+  height: 39px;
+}
+
+.logo-divider {
+  width: 1px;
+  height: 34px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: clamp(14px, 1.5vw, 26px);
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.main-nav a {
+  color: rgba(255, 255, 255, 0.72);
+  transition:
+    color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.main-nav a:hover {
+  color: #fff;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  flex-shrink: 0;
+}
+
+.language-switch {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  color: rgba(255, 255, 255, 0.38);
+}
+
+.language-switch .active {
+  color: #fff;
+}
+
+.language-switch a {
+  color: rgba(255, 255, 255, 0.48);
+}
+
+.language-switch a:hover {
+  color: #fff;
+}
+
+.header-register {
+  padding: 11px 18px;
+
+  border-radius: 999px;
+
+  background: #6828ff;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  box-shadow:
+    0 0 18px rgba(104, 40, 255, 0.32),
+    0 0 40px rgba(104, 40, 255, 0.12);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.header-register:hover {
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 0 24px rgba(104, 40, 255, 0.55),
+    0 0 60px rgba(104, 40, 255, 0.2);
+}
+
+@media (max-width: 1180px) {
+  .main-nav {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .header-inner {
+    height: 68px;
+  }
+
+  .logo-kndise {
+    height: 34px;
+  }
+
+  .logo-minjust {
+    height: 31px;
+  }
+
+  .logo-divider {
+    height: 28px;
+  }
+
+  .header-register {
+    display: none;
+  }
+}

@@ -1,0 +1,122 @@
+---
+import "../styles/footer.css";
+import { translations, type Language } from "../data/translations";
+
+interface Props {
+  lang?: Language;
+}
+
+const { lang = "uk" } = Astro.props;
+const t = translations[lang].footer;
+
+const isEnglish = lang === "en";
+---
+
+<footer class="site-footer">
+  <div class="footer-grid"></div>
+
+  <div class="container footer-inner">
+
+    <div class="footer-top">
+
+      <div class="footer-brand">
+        <div class="footer-logos">
+          <img
+            src="/images/logos/kndise.svg"
+            alt="KNDIFE"
+          />
+
+          <span></span>
+
+          <img
+            src="/images/logos/minjust.svg"
+            alt="Ministry of Justice of Ukraine"
+          />
+        </div>
+
+        <p>
+          {t.copyright}
+        </p>
+      </div>
+
+      <nav class="footer-nav">
+        <a href="#about">
+          {isEnglish ? "About" : "Про форум"}
+        </a>
+
+        <a href="#panels">
+          {isEnglish ? "Topics" : "Напрями"}
+        </a>
+
+        <a href="#audience">
+          {isEnglish ? "Participants" : "Учасники"}
+        </a>
+
+        <a href="#speakers">
+          {isEnglish ? "Speakers" : "Спікери"}
+        </a>
+
+        <a href="#partners">
+          {isEnglish ? "Partners" : "Партнери"}
+        </a>
+
+        <a href="#dates">
+          {isEnglish ? "Schedule" : "Регламент"}
+        </a>
+
+        <a href="#requirements">
+          {isEnglish ? "For Authors" : "Авторам тез"}
+        </a>
+
+        <a href="#contacts">
+          {isEnglish ? "Contacts" : "Контакти"}
+        </a>
+      </nav>
+
+    </div>
+
+    <div class="footer-bottom">
+
+      <div class="footer-links">
+        <a href="#">
+          {t.privacy}
+        </a>
+
+        <a
+          href="https://minjust.gov.ua/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {t.ministry}
+        </a>
+
+        <a
+          href="https://kndise.gov.ua/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {t.kndise}
+        </a>
+
+        <a href="#">
+          {t.repository}
+        </a>
+      </div>
+
+      <div class="footer-social">
+        <span>{t.social}</span>
+
+        <a
+          href="#"
+          aria-label="Facebook"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          f
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+</footer>
