@@ -23,7 +23,7 @@ const isEnglish = lang === "en";
       <img
         class="logo logo-kndise"
         src="/images/logos/kndise.svg"
-        alt="KNDIFE"
+        alt="КНДІСЕ"
       />
 
       <span class="logo-divider"></span>
@@ -31,11 +31,11 @@ const isEnglish = lang === "en";
       <img
         class="logo logo-minjust"
         src="/images/logos/minjust.svg"
-        alt="Ministry of Justice of Ukraine"
+        alt="Міністерство юстиції України"
       />
     </a>
 
-    <nav class="main-nav">
+    <nav class="main-nav" aria-label="Головна навігація">
       <a href="#about">{t.about}</a>
       <a href="#panels">{t.panels}</a>
       <a href="#audience">{t.audience}</a>
@@ -75,7 +75,67 @@ const isEnglish = lang === "en";
         {t.register}
       </a>
 
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Відкрити меню"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
     </div>
 
   </div>
+
+  <div class="mobile-menu">
+
+    <nav class="mobile-nav">
+      <a href="#about">{t.about}</a>
+      <a href="#panels">{t.panels}</a>
+      <a href="#audience">{t.audience}</a>
+      <a href="#speakers">{t.speakers}</a>
+      <a href="#partners">{t.partners}</a>
+      <a href="#dates">{t.dates}</a>
+      <a href="#requirements">{t.requirements}</a>
+      <a href="#contacts">{t.contacts}</a>
+    </nav>
+
+    <a
+      class="mobile-register"
+      href="https://docs.google.com/forms/d/e/1FAIpQLSc2ofIiUtdtdjV0MeszjOgk3RupPV5RF0k7XQEZiM9u2S9yGg/viewform?usp=publish-editor"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      {t.register}
+    </a>
+
+  </div>
 </header>
+
+<script>
+  const toggle = document.querySelector(".menu-toggle");
+  const menu = document.querySelector(".mobile-menu");
+  const links = document.querySelectorAll(".mobile-nav a");
+
+  toggle?.addEventListener("click", () => {
+    const opened = toggle.classList.toggle("is-open");
+
+    menu?.classList.toggle("is-open", opened);
+
+    toggle.setAttribute(
+      "aria-expanded",
+      opened ? "true" : "false"
+    );
+  });
+
+  links.forEach((link) => {
+    link.addEventListener("click", () => {
+      toggle?.classList.remove("is-open");
+      menu?.classList.remove("is-open");
+      toggle?.setAttribute("aria-expanded", "false");
+    });
+  });
+</script>

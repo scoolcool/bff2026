@@ -12,18 +12,20 @@ const t = translations[lang].hero;
 
 <section class="hero">
   <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
 
   <div class="container hero-inner">
-    <div class="hero-content">
-      <div class="hero-kicker">
-        {t.kicker}
-      </div>
 
-      <h1>
+    <div class="hero-content">
+
+      <div class="hero-institute">
+  {t.institute}
+</div>
+
+      <h1 class="hero-title">
         <span>{t.title1}</span>
         <span>{t.title2}</span>
-
-        <span class="accent-line">
+        <span class="hero-title-accent">
           {t.title3} {t.title4}
         </span>
       </h1>
@@ -50,25 +52,20 @@ const t = translations[lang].hero;
           {t.download}
         </a>
       </div>
+
     </div>
 
     <div class="hero-visual">
       <img
-        class="coin coin-main"
-        src="/images/decor/Bitcoin_3D.png"
-        alt=""
-        aria-hidden="true"
-      />
-
-      <img
-        class="coin coin-secondary"
-        src="/images/decor/USD Coin_3D.png"
+        class="hero-coins"
+        src="/images/decor/bg_coin.png"
         alt=""
         aria-hidden="true"
       />
     </div>
 
     <div class="hero-meta">
+
       <div>
         <span class="meta-label">
           {t.meta.cityLabel}
@@ -100,8 +97,16 @@ const t = translations[lang].hero;
       </div>
 
       <div class="hashtag">
-        {t.meta.hashtag}
-      </div>
+  <img
+    src="/images/decor/bff-icon.png"
+    alt=""
+    aria-hidden="true"
+  />
+
+  <span>{t.meta.hashtag}</span>
+</div>
+
     </div>
+
   </div>
 </section>

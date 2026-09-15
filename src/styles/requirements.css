@@ -1,24 +1,28 @@
 .requirements {
   position: relative;
   overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 85% 18%,
+      rgba(46, 0, 216, 0.09),
+      transparent 34%
+    ),
+    #171717;
+
+  color: #fff;
 }
 
 .requirements-grid-bg {
   position: absolute;
   inset: 0;
 
-  background-image:
-    linear-gradient(
-      rgba(17, 17, 17, 0.04) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      90deg,
-      rgba(17, 17, 17, 0.04) 1px,
-      transparent 1px
-    );
+  background-image: url("/images/decor/grid_background.svg");
+  background-repeat: repeat;
+  background-position: top left;
+  background-size: var(--grid-size) var(--grid-size);
 
-  background-size: 84px 84px;
+  opacity: 0.14;
 
   pointer-events: none;
 }
@@ -28,77 +32,125 @@
   z-index: 2;
 }
 
+
+/* ========================================
+   HEADING
+   ======================================== */
+
 .requirements-heading {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.48fr);
-  gap: 80px;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.46fr);
+
+  gap: 72px;
+
   align-items: end;
 
-  margin-bottom: 80px;
+  margin-bottom: 68px;
+}
+
+.requirements-heading .section-title {
+  max-width: 780px;
 }
 
 .requirements-heading .section-title span {
   display: block;
-  color: var(--purple);
 }
 
 .requirements-intro {
-  max-width: 430px;
+  max-width: 420px;
+
   margin: 0 0 8px;
 
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.65;
 
-  color: rgba(17, 17, 17, 0.58);
+  color: rgba(255, 255, 255, 0.55);
 }
+
+
+/* ========================================
+   MAIN
+   ======================================== */
 
 .requirements-main {
   display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.65fr);
+  grid-template-columns:
+    minmax(0, 1.35fr)
+    minmax(320px, 0.65fr);
+
   gap: 56px;
 }
+
+
+/* ========================================
+   TECHNICAL BLOCK
+   ======================================== */
 
 .technical-block > h3 {
   margin: 0 0 22px;
 
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 700;
+
   letter-spacing: 0.14em;
   text-transform: uppercase;
 
-  color: rgba(17, 17, 17, 0.45);
+  color: rgba(255, 255, 255, 0.35);
 }
 
 .technical-list {
-  border-top: 1px solid var(--border-dark);
+  display: grid;
+
+  gap: 12px;
 }
 
 .technical-item {
   display: grid;
-  grid-template-columns: 70px 1fr;
-  gap: 24px;
+  grid-template-columns: 58px minmax(0, 1fr);
 
-  padding: 24px 0;
+  gap: 22px;
 
-  border-bottom: 1px solid var(--border-dark);
+  padding: 22px 24px;
+
+  background: #202020;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+.technical-item:hover {
+  transform: translateX(4px);
+
+  background: #232323;
 }
 
 .technical-number {
   font-family: "Unbounded", sans-serif;
-  font-size: 12px;
-  font-weight: 700;
 
-  color: var(--purple);
+  font-size: 12px;
+  font-weight: 900;
+
+  letter-spacing: 0.01em;
+
+  color: var(--accent);
 }
 
 .technical-item h4 {
   margin: 0;
 
   font-family: "Unbounded", sans-serif;
-  font-size: 17px;
-  line-height: 1.2;
 
-  color: #111;
+  font-size: 16px;
+  line-height: 1.22;
+
+  letter-spacing: 0.01em;
+
+  font-weight: 900;
+
+  text-transform: uppercase;
+
+  color: #fff;
 }
 
 .technical-item p {
@@ -107,21 +159,30 @@
   font-size: 13px;
   line-height: 1.6;
 
-  color: rgba(17, 17, 17, 0.6);
+  color: rgba(255, 255, 255, 0.52);
 }
+
+
+/* ========================================
+   SIDE
+   ======================================== */
 
 .requirements-side {
   display: flex;
   flex-direction: column;
+
   gap: 18px;
 }
 
 .requirement-box {
-  padding: 28px;
+  padding: 30px;
 
-  border: 1px solid var(--border-dark);
-
-  background: rgba(255, 255, 255, 0.22);
+  background:
+    linear-gradient(
+      135deg,
+      rgba(46, 0, 216, 0.12),
+      rgba(255, 255, 255, 0.025)
+    );
 }
 
 .requirement-tag {
@@ -131,52 +192,57 @@
 
   font-size: 9px;
   font-weight: 700;
-  letter-spacing: 0.14em;
 
-  color: var(--purple);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+
+  color: var(--accent);
 }
 
 .requirement-box h3 {
   margin: 0;
 
   font-family: "Unbounded", sans-serif;
-  font-size: 22px;
-  line-height: 1.15;
 
-  color: #111;
+  font-size: 21px;
+  line-height: 1.18;
+
+  letter-spacing: 0.01em;
+
+  font-weight: 900;
+
+  text-transform: uppercase;
+
+  color: #fff;
 }
 
 .requirement-box p {
   margin: 16px 0 0;
 
   font-size: 13px;
-  line-height: 1.6;
+  line-height: 1.65;
 
-  color: rgba(17, 17, 17, 0.62);
+  color: rgba(255, 255, 255, 0.58);
 }
 
-.warning-box {
-  border-color: rgba(104, 40, 255, 0.38);
 
-  background:
-    linear-gradient(
-      135deg,
-      rgba(104, 40, 255, 0.06),
-      rgba(255, 255, 255, 0.15)
-    );
-}
+/* ========================================
+   RESPONSIBILITY
+   ======================================== */
 
 .responsibility {
   padding: 18px 0;
 
-  border-top: 1px solid var(--border-dark);
-  border-bottom: 1px solid var(--border-dark);
-
   font-size: 12px;
   line-height: 1.55;
 
-  color: rgba(17, 17, 17, 0.5);
+  color: rgba(255, 255, 255, 0.42);
 }
+
+
+/* ========================================
+   DOWNLOAD
+   ======================================== */
 
 .requirements-download {
   min-height: 54px;
@@ -184,60 +250,154 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
   gap: 10px;
 
   padding: 0 20px;
 
   border-radius: 999px;
 
-  background: var(--purple);
-  color: white;
+  background: var(--accent);
+  color: #fff;
 
   font-size: 12px;
   font-weight: 700;
 
+  box-shadow:
+    0 0 20px rgba(46, 0, 216, 0.24);
+
   transition:
     transform 0.2s ease,
+    background 0.2s ease,
     box-shadow 0.2s ease;
 }
 
 .requirements-download:hover {
   transform: translateY(-2px);
 
+  background: var(--accent-hover);
+
   box-shadow:
-    0 0 26px rgba(104, 40, 255, 0.24);
+    0 0 28px rgba(46, 0, 216, 0.38);
 }
 
 .requirements-download span {
   font-size: 18px;
 }
 
-@media (max-width: 1000px) {
 
+/* ========================================
+   TABLET
+   ======================================== */
+
+@media (max-width: 1000px) {
   .requirements-heading {
     grid-template-columns: 1fr;
+
     gap: 26px;
+
+    margin-bottom: 52px;
+  }
+
+  .requirements-intro {
+    max-width: 700px;
   }
 
   .requirements-main {
     grid-template-columns: 1fr;
   }
 
+  .requirements-side {
+    max-width: 760px;
+  }
 }
 
-@media (max-width: 650px) {
 
-  .requirements-grid-bg {
-    background-size: 56px 56px;
+/* ========================================
+   MOBILE
+   ======================================== */
+
+@media (max-width: 760px) {
+  .requirements-heading {
+    margin-bottom: 40px;
+  }
+
+  .requirements-intro {
+    font-size: 14px;
   }
 
   .technical-item {
-    grid-template-columns: 44px 1fr;
+    grid-template-columns: 42px minmax(0, 1fr);
+
     gap: 14px;
+
+    padding: 20px;
+  }
+
+  .technical-item h4 {
+    font-size: 15px;
+  }
+
+  .technical-item p {
+    font-size: 12px;
   }
 
   .requirement-box {
-    padding: 22px;
+    padding: 24px 22px;
   }
 
+  .requirement-box h3 {
+    font-size: 18px;
+  }
+
+  .requirement-box p {
+    font-size: 12px;
+  }
+
+  .responsibility {
+    font-size: 11px;
+  }
+
+  .requirements-download {
+    width: 100%;
+
+    min-height: 50px;
+
+    padding: 0 18px;
+  }
+}
+
+
+/* ========================================
+   SMALL MOBILE
+   ======================================== */
+
+@media (max-width: 480px) {
+  .technical-item {
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+
+    padding: 18px;
+  }
+
+  .technical-number {
+    font-size: 11px;
+  }
+
+  .technical-item h4 {
+    font-size: 14px;
+  }
+
+  .requirement-box {
+    padding: 20px 18px;
+  }
+
+  .requirement-box h3 {
+    font-size: 17px;
+  }
+
+  .requirements-download {
+    font-size: 11px;
+  }
 }

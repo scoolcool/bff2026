@@ -8,6 +8,14 @@
 
 @font-face {
   font-family: "Montserrat";
+  src: url("/fonts/Montserrat-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
   src: url("/fonts/Montserrat-SemiBold.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
@@ -24,43 +32,82 @@
 
 @font-face {
   font-family: "Unbounded";
-  src: url("/fonts/Unbounded-Bold.ttf") format("truetype");
-  font-weight: 700;
+  src: url("/fonts/Unbounded-Black.ttf") format("truetype");
+  font-weight: 900;
   font-style: normal;
   font-display: swap;
 }
 
-:root {
-  --bg: #111111;
-  --bg-soft: #171717;
-  --text: #ffffff;
-  --text-muted: #b8b8b8;
-  --accent: #4c00ff;
-  --accent-2: #7b2cff;
-  --line: rgba(255, 255, 255, 0.1);
-
-  --container: 1440px;
-  --radius: 20px;
+@font-face {
+  font-family: "eUkraineHeadLogo";
+  src: url("/fonts/e-UkraineHead-LOGO.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
-* {
+
+/* ========================================
+   ROOT
+   ======================================== */
+
+:root {
+  --bg-dark: #141414;
+  --bg-dark-soft: #181818;
+  --bg-dark-card: #202020;
+
+  --text-light: #ffffff;
+  --text-muted-light: rgba(255, 255, 255, 0.58);
+
+  --accent: #2e00d8;
+  --accent-hover: #3b0ae8;
+
+  --container: 1440px;
+
+  --grid-size: 64px;
+
+  --section-padding: 120px;
+
+  --title-size: clamp(38px, 4.7vw, 72px);
+  --title-line-height: 1.02;
+  --title-letter-spacing: 0.01em;
+
+  --radius: 18px;
+}
+
+
+/* ========================================
+   RESET
+   ======================================== */
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 90px;
 }
 
 body {
   margin: 0;
-  background: var(--bg);
-  color: var(--text);
+
+  background: var(--bg-dark);
+  color: var(--text-light);
+
   font-family: "Montserrat", Arial, sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+
+  overflow-x: hidden;
 }
 
 img {
-  max-width: 100%;
   display: block;
+  max-width: 100%;
 }
 
 a {
@@ -68,57 +115,32 @@ a {
   text-decoration: none;
 }
 
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+
+/* ========================================
+   CONTAINER
+   ======================================== */
+
 .container {
   width: min(calc(100% - 40px), var(--container));
   margin-inline: auto;
 }
-.section {
-  position: relative;
-  padding: 120px 0;
-}
 
-.section-dark {
-  background: #101010;
-  color: #fff;
-}
 
-.section-light {
-  background: #f5f5f3;
-  color: #111;
-}
-
-.section-purple {
-  background:
-    radial-gradient(
-      circle at 80% 30%,
-      rgba(111, 44, 255, 0.35),
-      transparent 45%
-    ),
-    #161020;
-  color: #fff;
-}
-:root {
-  --bg-dark: #101010;
-  --bg-light: #f4f4f1;
-
-  --text-dark: #111111;
-  --text-light: #ffffff;
-
-  --purple: #6828ff;
-  --purple-bright: #7b3cff;
-
-  --border-dark: rgba(17, 17, 17, 0.12);
-  --border-light: rgba(255, 255, 255, 0.12);
-}
+/* ========================================
+   SECTIONS
+   ======================================== */
 
 .section {
   position: relative;
-  padding: 120px 0;
-}
 
-.section-light {
-  background: var(--bg-light);
-  color: var(--text-dark);
+  padding: var(--section-padding) 0;
 }
 
 .section-dark {
@@ -126,17 +148,26 @@ a {
   color: var(--text-light);
 }
 
+
+/* ========================================
+   SECTION LABEL
+   ======================================== */
+
 .section-label {
   display: flex;
   align-items: center;
+
   gap: 12px;
 
   margin-bottom: 28px;
 
   font-size: 11px;
   font-weight: 700;
+
   letter-spacing: 0.14em;
   text-transform: uppercase;
+
+  color: rgba(255, 255, 255, 0.72);
 }
 
 .section-label::before {
@@ -145,20 +176,244 @@ a {
   width: 28px;
   height: 2px;
 
-  background: var(--purple);
+  flex-shrink: 0;
+
+  background: var(--accent);
 }
+
+
+/* ========================================
+   GLOBAL SECTION TITLES
+   ======================================== */
 
 .section-title {
   margin: 0;
 
   font-family: "Unbounded", sans-serif;
-  font-size: clamp(38px, 5vw, 72px);
-  line-height: 0.98;
-  letter-spacing: -0.055em;
+
+  font-size: var(--title-size);
+  line-height: var(--title-line-height);
+
+  letter-spacing: var(--title-letter-spacing);
+
+  font-weight: 900;
+
+  text-transform: uppercase;
+
+  color: #fff;
+
+  overflow-wrap: normal;
+  word-break: normal;
 }
 
+.section-title span {
+  color: var(--accent);
+}
+
+
+/* ========================================
+   GENERAL HEADINGS
+   ======================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+
+/* ========================================
+   PARAGRAPHS
+   ======================================== */
+
+p {
+  text-wrap: pretty;
+}
+
+
+/* ========================================
+   SHARED BUTTONS
+   ======================================== */
+
+.btn,
+.header-register,
+.registration-button,
+.speaker-apply,
+.requirements-download {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn:hover,
+.header-register:hover,
+.registration-button:hover,
+.speaker-apply:hover,
+.requirements-download:hover {
+  background: var(--accent-hover);
+}
+
+
+/* ========================================
+   BACKGROUND GRID
+   ======================================== */
+
+.grid-dark {
+  background-image: url("/images/decor/grid_background.svg");
+  background-repeat: repeat;
+  background-position: top left;
+
+  background-size:
+    var(--grid-size)
+    var(--grid-size);
+}
+
+
+/* ========================================
+   COMMON DARK CARD
+   ======================================== */
+
+.dark-card {
+  background: var(--bg-dark-card);
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.dark-card:hover {
+  transform: translateY(-4px);
+
+  background: #232323;
+
+  box-shadow:
+    0 18px 42px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ========================================
+   ACCESSIBILITY
+   ======================================== */
+
+::selection {
+  background: var(--accent);
+  color: #fff;
+}
+
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+
+/* ========================================
+   LARGE TABLET
+   ======================================== */
+
+@media (max-width: 1200px) {
+  :root {
+    --grid-size: 60px;
+
+    --title-size: clamp(38px, 5vw, 66px);
+  }
+}
+
+
+/* ========================================
+   TABLET
+   ======================================== */
+
+@media (max-width: 1000px) {
+  :root {
+    --grid-size: 58px;
+
+    --section-padding: 100px;
+
+    --title-size: clamp(36px, 6vw, 62px);
+  }
+
+  .section-label {
+    margin-bottom: 24px;
+  }
+}
+
+
+/* ========================================
+   MOBILE
+   ======================================== */
+
 @media (max-width: 760px) {
-  .section {
-    padding: 80px 0;
+  :root {
+    --grid-size: 52px;
+
+    --section-padding: 76px;
+
+    --title-size: clamp(32px, 9.5vw, 50px);
+
+    --title-line-height: 1.04;
+    --title-letter-spacing: 0.01em;
+  }
+
+  html {
+    scroll-padding-top: 72px;
+  }
+
+  .container {
+    width: min(
+      calc(100% - 28px),
+      var(--container)
+    );
+  }
+
+  .section-label {
+    gap: 10px;
+
+    margin-bottom: 20px;
+
+    font-size: 9px;
+  }
+
+  .section-label::before {
+    width: 22px;
+  }
+
+  .section-title {
+    max-width: 100%;
+  }
+}
+
+
+/* ========================================
+   SMALL MOBILE
+   ======================================== */
+
+@media (max-width: 480px) {
+  :root {
+    --grid-size: 46px;
+
+    --section-padding: 64px;
+
+    --title-size: clamp(30px, 9vw, 44px);
+  }
+
+  .container {
+    width: min(
+      calc(100% - 22px),
+      var(--container)
+    );
+  }
+
+  .section-label {
+    font-size: 8px;
+
+    letter-spacing: 0.12em;
   }
 }

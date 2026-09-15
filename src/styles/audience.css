@@ -1,24 +1,28 @@
 .audience {
   position: relative;
   overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(46, 0, 216, 0.08),
+      transparent 32%
+    ),
+    #1c1c1c;
+
+  color: #fff;
 }
 
 .audience-grid {
   position: absolute;
   inset: 0;
 
-  background-image:
-    linear-gradient(
-      rgba(17, 17, 17, 0.04) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      90deg,
-      rgba(17, 17, 17, 0.04) 1px,
-      transparent 1px
-    );
+  background-image: url("/images/decor/grid_background.svg");
+  background-repeat: repeat;
+  background-position: top left;
+  background-size: var(--grid-size) var(--grid-size);
 
-  background-size: 84px 84px;
+  opacity: 0.14;
 
   pointer-events: none;
 }
@@ -28,56 +32,68 @@
   z-index: 2;
 }
 
+
+/* ========================================
+   HEADING
+   ======================================== */
+
 .audience-heading {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.5fr);
-  gap: 80px;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.46fr);
+
+  gap: 72px;
+
   align-items: end;
 
-  margin-bottom: 70px;
+  margin-bottom: 68px;
+}
+
+.audience-heading .section-title {
+  max-width: 780px;
 }
 
 .audience-heading .section-title span {
   display: block;
-  color: var(--purple);
 }
 
 .audience-intro {
-  max-width: 430px;
+  max-width: 420px;
 
   margin: 0 0 8px;
 
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.65;
 
-  color: rgba(17, 17, 17, 0.58);
+  color: rgba(255, 255, 255, 0.55);
 }
+
+
+/* ========================================
+   CARDS
+   ======================================== */
 
 .audience-list {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
 
-  border-top: 1px solid var(--border-dark);
-  border-left: 1px solid var(--border-dark);
+  gap: 16px;
 }
 
 .audience-card {
   position: relative;
 
-  min-height: 290px;
+  min-height: 270px;
 
-  padding: 30px;
+  padding: 28px;
 
-  border-right: 1px solid var(--border-dark);
-  border-bottom: 1px solid var(--border-dark);
-
-  background: rgba(255, 255, 255, 0.16);
+  background: #202020;
 
   overflow: hidden;
 
   transition:
-    background 0.3s ease,
-    transform 0.3s ease;
+    transform 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .audience-card::before {
@@ -85,32 +101,45 @@
 
   position: absolute;
 
-  width: 250px;
-  height: 250px;
+  width: 240px;
+  height: 240px;
 
-  right: -120px;
-  top: -120px;
+  right: -110px;
+  top: -110px;
 
   border-radius: 50%;
 
-  background: radial-gradient(
-    circle,
-    rgba(104, 40, 255, 0.12),
-    transparent 70%
-  );
+  background:
+    radial-gradient(
+      circle,
+      rgba(46, 0, 216, 0.18),
+      transparent 70%
+    );
 
   opacity: 0;
 
   transition: opacity 0.3s ease;
+
+  pointer-events: none;
 }
 
 .audience-card:hover {
-  background: rgba(104, 40, 255, 0.04);
+  transform: translateY(-4px);
+
+  background: #232323;
+
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.18);
 }
 
 .audience-card:hover::before {
   opacity: 1;
 }
+
+
+/* ========================================
+   CARD TOP
+   ======================================== */
 
 .audience-card-top {
   position: relative;
@@ -120,16 +149,18 @@
   align-items: center;
   justify-content: space-between;
 
-  margin-bottom: 70px;
+  margin-bottom: 52px;
 }
 
 .audience-number {
   font-family: "Unbounded", sans-serif;
-  font-size: 14px;
-  font-weight: 700;
+
+  font-size: 13px;
+  font-weight: 900;
+
   letter-spacing: 0.08em;
 
-  color: var(--purple);
+  color: var(--accent);
 }
 
 .audience-dot {
@@ -138,11 +169,16 @@
 
   border-radius: 50%;
 
-  background: var(--purple);
+  background: var(--accent);
 
   box-shadow:
-    0 0 12px rgba(104, 40, 255, 0.55);
+    0 0 12px rgba(46, 0, 216, 0.55);
 }
+
+
+/* ========================================
+   CARD TEXT
+   ======================================== */
 
 .audience-card h3 {
   position: relative;
@@ -153,11 +189,17 @@
   margin: 0;
 
   font-family: "Unbounded", sans-serif;
-  font-size: clamp(18px, 1.6vw, 25px);
-  line-height: 1.15;
-  letter-spacing: -0.035em;
 
-  color: #111;
+  font-size: clamp(17px, 1.35vw, 22px);
+  line-height: 1.18;
+
+  letter-spacing: 0.01em;
+
+  font-weight: 900;
+
+  text-transform: uppercase;
+
+  color: #fff;
 }
 
 .audience-card p {
@@ -166,47 +208,104 @@
 
   max-width: 330px;
 
-  margin: 18px 0 0;
+  margin: 16px 0 0;
 
   font-size: 13px;
   line-height: 1.55;
 
-  color: rgba(17, 17, 17, 0.6);
+  color: rgba(255, 255, 255, 0.5);
 }
+
+
+/* ========================================
+   TABLET
+   ======================================== */
 
 @media (max-width: 1000px) {
-
   .audience-heading {
     grid-template-columns: 1fr;
+
     gap: 26px;
+
+    margin-bottom: 52px;
+  }
+
+  .audience-intro {
+    max-width: 700px;
   }
 
   .audience-list {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-
 }
 
-@media (max-width: 650px) {
 
-  .audience-grid {
-    background-size: 56px 56px;
+/* ========================================
+   MOBILE
+   ======================================== */
+
+@media (max-width: 760px) {
+  .audience-heading {
+    margin-bottom: 40px;
   }
 
-  .audience-heading {
-    margin-bottom: 45px;
+  .audience-intro {
+    font-size: 14px;
   }
 
   .audience-list {
     grid-template-columns: 1fr;
+
+    gap: 12px;
   }
 
   .audience-card {
-    min-height: 240px;
+    min-height: 220px;
+
+    padding: 24px 22px;
   }
 
   .audience-card-top {
-    margin-bottom: 48px;
+    margin-bottom: 38px;
   }
 
+  .audience-card h3 {
+    max-width: 100%;
+
+    font-size: 18px;
+  }
+
+  .audience-card p {
+    max-width: 100%;
+
+    font-size: 12px;
+  }
+}
+
+
+/* ========================================
+   SMALL MOBILE
+   ======================================== */
+
+@media (max-width: 480px) {
+  .audience-card {
+    min-height: 200px;
+  }
+
+  .audience-card-top {
+    margin-bottom: 30px;
+  }
+
+  .audience-number {
+    font-size: 12px;
+  }
+
+  .audience-card h3 {
+    font-size: 17px;
+  }
+
+  .audience-card p {
+    font-size: 12px;
+    line-height: 1.5;
+  }
 }

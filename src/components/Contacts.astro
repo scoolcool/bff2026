@@ -10,7 +10,7 @@ const { lang = "uk" } = Astro.props;
 const t = translations[lang].contacts;
 ---
 
-<section id="contacts" class="section section-light contacts">
+<section id="contacts" class="section contacts">
   <div class="contacts-grid-bg"></div>
 
   <div class="container contacts-inner">
@@ -46,16 +46,24 @@ const t = translations[lang].contacts;
           <p>{t.address}</p>
         </div>
 
-        <div class="contact-item">
-          <span>{t.coordinatorLabel}</span>
-          <p>{t.coordinator}</p>
-        </div>
+        <div class="contact-item contact-people">
+          <span>{t.contactsLabel}</span>
 
-        <div class="contact-item">
-          <span>{t.phoneLabel}</span>
-          <a href="tel:+38044">
-            {t.phone}
-          </a>
+          <div class="contact-people-list">
+            {
+              t.coordinators.map((person) => (
+                <article class="contact-person">
+                  <a href={`tel:${person.phone.replace(/\s/g, "")}`}>
+                    {person.phone}
+                  </a>
+
+                  <h3>{person.name}</h3>
+
+                  <p>{person.description}</p>
+                </article>
+              ))
+            }
+          </div>
         </div>
 
         <div class="contact-item">
@@ -79,17 +87,11 @@ const t = translations[lang].contacts;
 
       </div>
 
-      <div class="contacts-map">
-        <div class="contacts-map-label">
-          {t.mapTitle}
+      <div class="contacts-aside">
+        <div class="contacts-mark">
+          BFF
+          <span>2026</span>
         </div>
-
-        <iframe
-          src="https://www.google.com/maps?q=Київ,вул.%20Сім'ї%20Бродських,6&output=embed"
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          title={t.mapTitle}
-        ></iframe>
       </div>
 
     </div>

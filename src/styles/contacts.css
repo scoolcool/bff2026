@@ -1,24 +1,29 @@
 .contacts {
   position: relative;
   overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 82% 18%,
+      rgba(46, 0, 216, 0.09),
+      transparent 34%
+    ),
+    #181818;
+
+  color: #fff;
 }
 
 .contacts-grid-bg {
   position: absolute;
   inset: 0;
 
-  background-image:
-    linear-gradient(
-      rgba(17, 17, 17, 0.04) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      90deg,
-      rgba(17, 17, 17, 0.04) 1px,
-      transparent 1px
-    );
+  background-image: url("/images/decor/grid_background.svg");
+  background-repeat: repeat;
+  background-position: top left;
+  background-size: var(--grid-size) var(--grid-size);
 
-  background-size: 84px 84px;
+  opacity: 0.14;
+
   pointer-events: none;
 }
 
@@ -27,57 +32,93 @@
   z-index: 2;
 }
 
+
+/* ========================================
+   HEADING
+   ======================================== */
+
 .contacts-heading {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.48fr);
-  gap: 80px;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.46fr);
+
+  gap: 72px;
+
   align-items: end;
 
-  margin-bottom: 80px;
+  margin-bottom: 68px;
+}
+
+.contacts-heading .section-title {
+  max-width: 780px;
 }
 
 .contacts-heading .section-title span {
   display: block;
-  color: var(--purple);
 }
 
 .contacts-intro {
-  max-width: 430px;
+  max-width: 420px;
+
   margin: 0 0 8px;
 
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.65;
 
-  color: rgba(17, 17, 17, 0.58);
+  color: rgba(255, 255, 255, 0.55);
 }
+
+
+/* ========================================
+   LAYOUT
+   ======================================== */
 
 .contacts-layout {
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  gap: 40px;
+  grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+
+  gap: 48px;
 }
 
 .contacts-info {
-  border-top: 1px solid var(--border-dark);
+  display: grid;
+
+  gap: 12px;
 }
+
+
+/* ========================================
+   CONTACT ITEMS
+   ======================================== */
 
 .contact-item {
   display: grid;
-  grid-template-columns: 150px 1fr;
-  gap: 28px;
+  grid-template-columns: 180px minmax(0, 1fr);
 
-  padding: 22px 0;
+  gap: 30px;
 
-  border-bottom: 1px solid var(--border-dark);
+  padding: 24px;
+
+  background: #202020;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.contact-item:hover {
+  background: #232323;
+
+  transform: translateY(-2px);
 }
 
 .contact-item > span {
   font-size: 10px;
   font-weight: 700;
+
   letter-spacing: 0.12em;
   text-transform: uppercase;
 
-  color: rgba(17, 17, 17, 0.4);
+  color: rgba(255, 255, 255, 0.34);
 }
 
 .contact-item p,
@@ -85,82 +126,232 @@
   margin: 0;
 
   font-size: 14px;
-  line-height: 1.55;
+  line-height: 1.6;
 
-  color: #111;
+  color: rgba(255, 255, 255, 0.86);
 }
 
 .contact-item a {
+  word-break: break-word;
+
   transition: color 0.2s ease;
 }
 
 .contact-item a:hover {
-  color: var(--purple);
+  color: var(--accent);
 }
 
-.contacts-map {
+
+/* ========================================
+   CONTACT PEOPLE
+   ======================================== */
+
+.contact-people-list {
+  display: grid;
+
+  gap: 24px;
+}
+
+.contact-person {
+  position: relative;
+}
+
+.contact-person + .contact-person {
+  padding-top: 24px;
+}
+
+.contact-person a {
+  display: inline-block;
+
+  margin-bottom: 9px;
+
+  font-family: "Unbounded", sans-serif;
+
+  font-size: 14px;
+  font-weight: 900;
+
+  letter-spacing: 0.01em;
+
+  color: var(--accent);
+}
+
+.contact-person h3 {
+  margin: 0;
+
+  font-family: "Unbounded", sans-serif;
+
+  font-size: 17px;
+  line-height: 1.2;
+
+  letter-spacing: 0.01em;
+
+  font-weight: 900;
+
+  text-transform: uppercase;
+
+  color: #fff;
+}
+
+.contact-person p {
+  max-width: 650px;
+
+  margin-top: 8px;
+
+  font-size: 13px;
+  line-height: 1.6;
+
+  color: rgba(255, 255, 255, 0.52);
+}
+
+
+/* ========================================
+   ASIDE
+   ======================================== */
+
+.contacts-aside {
   position: relative;
 
-  min-height: 520px;
+  min-height: 480px;
 
-  border: 1px solid var(--border-dark);
+  display: flex;
+  align-items: flex-end;
+
+  padding: 32px;
+
+  background:
+    radial-gradient(
+      circle at 65% 30%,
+      rgba(46, 0, 216, 0.32),
+      transparent 52%
+    ),
+    #141414;
+
   overflow: hidden;
-
-  background: #deded9;
 }
 
-.contacts-map-label {
-  position: absolute;
-  z-index: 2;
+.contacts-mark {
+  font-family: "Unbounded", sans-serif;
 
-  left: 18px;
-  top: 18px;
+  font-size: clamp(52px, 6.5vw, 100px);
+  line-height: 0.95;
 
-  padding: 8px 12px;
+  font-weight: 900;
 
-  border-radius: 999px;
+  letter-spacing: 0.01em;
 
-  background: rgba(16, 16, 16, 0.9);
-  color: white;
-
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.08);
 }
 
-.contacts-map iframe {
-  width: 100%;
-  height: 100%;
-  min-height: 520px;
+.contacts-mark span {
+  display: block;
 
-  border: 0;
-
-  filter: grayscale(0.15) contrast(1.03);
+  color: var(--accent);
 }
+
+
+/* ========================================
+   TABLET
+   ======================================== */
 
 @media (max-width: 1000px) {
   .contacts-heading {
     grid-template-columns: 1fr;
+
     gap: 26px;
+
+    margin-bottom: 52px;
+  }
+
+  .contacts-intro {
+    max-width: 700px;
   }
 
   .contacts-layout {
     grid-template-columns: 1fr;
   }
+
+  .contacts-aside {
+    min-height: 260px;
+  }
 }
 
-@media (max-width: 650px) {
-  .contacts-grid-bg {
-    background-size: 56px 56px;
+
+/* ========================================
+   MOBILE
+   ======================================== */
+
+@media (max-width: 760px) {
+  .contacts-heading {
+    margin-bottom: 40px;
+  }
+
+  .contacts-intro {
+    font-size: 14px;
   }
 
   .contact-item {
     grid-template-columns: 1fr;
-    gap: 8px;
+
+    gap: 10px;
+
+    padding: 20px;
   }
 
-  .contacts-map,
-  .contacts-map iframe {
-    min-height: 420px;
+  .contact-item p,
+  .contact-item a {
+    font-size: 13px;
+  }
+
+  .contact-people-list {
+    gap: 20px;
+  }
+
+  .contact-person + .contact-person {
+    padding-top: 20px;
+  }
+
+  .contact-person a {
+    font-size: 13px;
+  }
+
+  .contact-person h3 {
+    font-size: 16px;
+  }
+
+  .contact-person p {
+    font-size: 12px;
+  }
+
+  .contacts-aside {
+    min-height: 220px;
+
+    padding: 24px;
+  }
+
+  .contacts-mark {
+    font-size: clamp(46px, 16vw, 76px);
+  }
+}
+
+
+/* ========================================
+   SMALL MOBILE
+   ======================================== */
+
+@media (max-width: 480px) {
+  .contact-item {
+    padding: 18px;
+  }
+
+  .contact-person h3 {
+    font-size: 15px;
+  }
+
+  .contacts-aside {
+    min-height: 190px;
+  }
+
+  .contacts-mark {
+    font-size: 48px;
   }
 }

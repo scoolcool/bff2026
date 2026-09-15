@@ -5,28 +5,25 @@
   background:
     radial-gradient(
       circle at 80% 20%,
-      rgba(104, 40, 255, 0.18),
+      rgba(46, 0, 216, 0.12),
       transparent 35%
     ),
-    #101010;
+    #181818;
+
+  color: #fff;
 }
 
 .timeline-grid-bg {
   position: absolute;
   inset: 0;
 
-  background-image:
-    linear-gradient(
-      rgba(255, 255, 255, 0.045) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0.045) 1px,
-      transparent 1px
-    );
+  background-image: url("/images/decor/grid_background.svg");
+  background-repeat: repeat;
+  background-position: top left;
+  background-size: var(--grid-size) var(--grid-size);
 
-  background-size: 84px 84px;
+  opacity: 0.14;
+
   pointer-events: none;
 }
 
@@ -35,29 +32,45 @@
   z-index: 2;
 }
 
+
+/* ========================================
+   HEADING
+   ======================================== */
+
 .timeline-heading {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(280px, 0.48fr);
-  gap: 80px;
+
+  gap: 72px;
+
   align-items: end;
 
-  margin-bottom: 80px;
+  margin-bottom: 68px;
+}
+
+.timeline-heading .section-title {
+  max-width: 780px;
 }
 
 .timeline-heading .section-title span {
   display: block;
-  color: var(--purple);
 }
 
 .timeline-intro {
   max-width: 430px;
+
   margin: 0 0 8px;
 
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.65;
 
-  color: rgba(255, 255, 255, 0.58);
+  color: rgba(255, 255, 255, 0.56);
 }
+
+
+/* ========================================
+   LIST
+   ======================================== */
 
 .timeline-list {
   position: relative;
@@ -77,34 +90,48 @@
   background:
     linear-gradient(
       to bottom,
-      var(--purple),
-      rgba(104, 40, 255, 0.18)
+      var(--accent),
+      rgba(46, 0, 216, 0.14)
     );
 
   box-shadow:
-    0 0 16px rgba(104, 40, 255, 0.45);
+    0 0 14px rgba(46, 0, 216, 0.32);
 }
+
+
+/* ========================================
+   ITEM
+   ======================================== */
 
 .timeline-item {
   position: relative;
 
   display: grid;
-  grid-template-columns: 72px 170px minmax(0, 1fr);
+  grid-template-columns:
+    72px
+    170px
+    minmax(0, 1fr);
+
   gap: 30px;
 
-  min-height: 150px;
+  min-height: 145px;
 
-  padding: 0 0 42px;
+  padding-bottom: 34px;
 }
+
+
+/* ========================================
+   MARKER
+   ======================================== */
 
 .timeline-marker {
   position: relative;
+  z-index: 2;
 
   display: flex;
   flex-direction: column;
-  align-items: center;
 
-  z-index: 2;
+  align-items: center;
 }
 
 .timeline-dot {
@@ -115,11 +142,11 @@
 
   border-radius: 50%;
 
-  background: var(--purple);
+  background: var(--accent);
 
   box-shadow:
-    0 0 10px rgba(104, 40, 255, 0.75),
-    0 0 24px rgba(104, 40, 255, 0.4);
+    0 0 10px rgba(46, 0, 216, 0.7),
+    0 0 22px rgba(46, 0, 216, 0.34);
 }
 
 .timeline-index {
@@ -127,37 +154,54 @@
 
   font-size: 9px;
   font-weight: 700;
+
   letter-spacing: 0.14em;
 
   color: rgba(255, 255, 255, 0.32);
 }
 
+
+/* ========================================
+   DATE
+   ======================================== */
+
 .timeline-date {
-  padding-top: 0;
-
   font-family: "Unbounded", sans-serif;
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: -0.03em;
 
-  color: var(--purple);
+  font-size: 18px;
+  line-height: 1.15;
+
+  font-weight: 900;
+
+  letter-spacing: 0.01em;
+
+  color: var(--accent);
 }
 
-.timeline-content {
-  padding: 0 0 34px;
 
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+/* ========================================
+   CONTENT
+   ======================================== */
+
+.timeline-content {
+  padding-bottom: 26px;
 }
 
 .timeline-content h3 {
   margin: 0;
 
   font-family: "Unbounded", sans-serif;
-  font-size: clamp(20px, 1.8vw, 28px);
-  line-height: 1.15;
-  letter-spacing: -0.04em;
 
-  color: white;
+  font-size: clamp(19px, 1.7vw, 26px);
+  line-height: 1.18;
+
+  letter-spacing: 0.01em;
+
+  font-weight: 900;
+
+  text-transform: uppercase;
+
+  color: #fff;
 }
 
 .timeline-content p {
@@ -168,36 +212,64 @@
   font-size: 14px;
   line-height: 1.6;
 
-  color: rgba(255, 255, 255, 0.58);
+  color: rgba(255, 255, 255, 0.56);
 }
 
-@media (max-width: 900px) {
 
+/* ========================================
+   TABLET
+   ======================================== */
+
+@media (max-width: 900px) {
   .timeline-heading {
     grid-template-columns: 1fr;
+
     gap: 26px;
+
+    margin-bottom: 52px;
+  }
+
+  .timeline-intro {
+    max-width: 700px;
   }
 
   .timeline-item {
-    grid-template-columns: 60px 1fr;
+    grid-template-columns:
+      60px
+      minmax(0, 1fr);
+
     gap: 22px;
+
+    min-height: auto;
+
+    padding-bottom: 30px;
   }
 
   .timeline-date {
     grid-column: 2;
-    margin-bottom: 8px;
+
+    margin-bottom: 6px;
   }
 
   .timeline-content {
     grid-column: 2;
-  }
 
+    padding-bottom: 22px;
+  }
 }
 
-@media (max-width: 600px) {
 
-  .timeline-grid-bg {
-    background-size: 56px 56px;
+/* ========================================
+   MOBILE
+   ======================================== */
+
+@media (max-width: 760px) {
+  .timeline-heading {
+    margin-bottom: 40px;
+  }
+
+  .timeline-intro {
+    font-size: 14px;
   }
 
   .timeline-list::before {
@@ -205,16 +277,78 @@
   }
 
   .timeline-item {
-    grid-template-columns: 38px 1fr;
+    grid-template-columns:
+      38px
+      minmax(0, 1fr);
+
     gap: 16px;
+
+    padding-bottom: 26px;
   }
 
   .timeline-marker {
     align-items: flex-start;
   }
 
+  .timeline-dot {
+    width: 12px;
+    height: 12px;
+
+    margin-top: 4px;
+  }
+
+  .timeline-index {
+    margin-top: 14px;
+
+    font-size: 8px;
+  }
+
   .timeline-date {
     font-size: 15px;
   }
 
+  .timeline-content h3 {
+    font-size: 18px;
+  }
+
+  .timeline-content p {
+    font-size: 12px;
+  }
+}
+
+
+/* ========================================
+   SMALL MOBILE
+   ======================================== */
+
+@media (max-width: 480px) {
+  .timeline-item {
+    grid-template-columns:
+      30px
+      minmax(0, 1fr);
+
+    gap: 12px;
+  }
+
+  .timeline-list::before {
+    left: 10px;
+  }
+
+  .timeline-dot {
+    width: 10px;
+    height: 10px;
+  }
+
+  .timeline-date {
+    font-size: 14px;
+  }
+
+  .timeline-content h3 {
+    font-size: 16px;
+  }
+
+  .timeline-content p {
+    font-size: 11px;
+    line-height: 1.55;
+  }
 }

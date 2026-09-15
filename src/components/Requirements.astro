@@ -10,7 +10,7 @@ const { lang = "uk" } = Astro.props;
 const t = translations[lang].requirements;
 ---
 
-<section id="requirements" class="section section-light requirements">
+<section id="requirements" class="section requirements">
   <div class="requirements-grid-bg"></div>
 
   <div class="container requirements-inner">
@@ -63,16 +63,12 @@ const t = translations[lang].requirements;
           </span>
 
           <h3>{t.integrityTitle}</h3>
-          <p>{t.integrityText}</p>
-        </article>
 
-        <article class="requirement-box warning-box">
-          <span class="requirement-tag">
-            WARNING
-          </span>
-
-          <h3>{t.restrictionsTitle}</h3>
-          <p>{t.restrictionsText}</p>
+          {
+            t.integrityParagraphs.map((paragraph) => (
+              <p>{paragraph}</p>
+            ))
+          }
         </article>
 
         <div class="responsibility">

@@ -15,6 +15,9 @@ export const translations = {
     },
 
     hero: {
+      institute:
+  "КИЇВСЬКИЙ НАУКОВО-ДОСЛІДНИЙ ІНСТИТУТ СУДОВИХ\u00A0ЕКСПЕРТИЗ МІНІСТЕРСТВА ЮСТИЦІЇ УКРАЇНИ",
+
       kicker: "Міністерство юстиції України · КНДІСЕ",
 
       title1: "BLOCKCHAIN",
@@ -85,40 +88,32 @@ export const translations = {
         {
           number: "01",
           badge: "BLOCKCHAIN FORENSICS",
-
           title:
             "Blockchain Forensics: методи та підходи до аналізу цифрових доказів",
-
           description:
             "Технічні аспекти виявлення та дослідження цифрових слідів у блокчейн-середовищі.",
-
           topics: [
             "Деанонімізація транзакцій і кластеризація адрес",
             "Робота з міксерами та cross-chain мостами",
             "Дослідження вразливостей smart contracts",
             "Спеціалізоване forensic-програмне забезпечення",
           ],
-
           footer: "PANEL 01",
         },
 
         {
           number: "02",
           badge: "CRIMINAL JUSTICE",
-
           title:
             "Взаємодія суб’єктів кримінальної юстиції у справах, пов’язаних із блокчейн-технологіями",
-
           description:
             "Правові та процесуальні механізми роботи з віртуальними активами та цифровими доказами.",
-
           topics: [
             "Тимчасовий доступ, арешт та конфіскація активів",
             "Стандартизація висновків експертів у судовій практиці",
             "Оцінка шкоди та доказове значення цифрових даних",
             "Міжнародне співробітництво й транскордонний обмін даними",
           ],
-
           footer: "PANEL 02",
         },
       ],
@@ -176,40 +171,33 @@ export const translations = {
       label: "04 / Спікери та експерти",
       title: "Спікери",
       titleAccent: "форуму",
-
       intro:
         "Провідні експерти галузі, науковці та практики у сфері блокчейн-розслідувань.",
-
       notice:
         "Перелік доповідачів та фінальний розклад виступів оновлюються в режимі реального часу. Реєстрація спікерів триває до 09 жовтня 2026 року.",
-
       apply: "Подати заявку спікера",
     },
 
     partners: {
-      label: "05 / Партнери заходу",
-      title: "Партнери та",
-      titleAccent: "підтримка",
+  label: "05 / Партнери",
+  title: "Партнери",
+  titleAccent: "форуму",
 
-      intro:
-        "Інституційна, технологічна та інформаційна співпраця.",
+  intro:
+    "Організації та інституції, які підтримують Blockchain Forensics Forum 2026.",
 
-      organizers: "Організатори",
-      institutional: "Інституційні та академічні партнери",
-      technology: "Технологічні партнери",
-      media: "Інформаційні партнери",
+  listTitle: "Партнери",
 
-      becomePartner: "Стати партнером форуму",
+  becomePartner: "Стати партнером форуму",
 
-      partnerText:
-        "Бажаєте долучитися до організації чи підтримати захід? Напишіть нам на olena.agapova@kndise.gov.ua з темою «Партнерство BFF-2026».",
-    },
+  partnerText:
+    "Бажаєте долучитися до організації чи підтримати захід? Напишіть нам на olena.agapova@kndise.gov.ua з темою «Партнерство BFF-2026».",
+},
 
     timeline: {
       label: "06 / Ключові дати",
       title: "Етапи",
       titleAccent: "форуму",
-
       intro:
         "Основні дедлайни та події, пов’язані з участю у Blockchain Forensics Forum 2026.",
 
@@ -251,7 +239,6 @@ export const translations = {
       label: "07 / Авторам тез",
       title: "Вимоги до",
       titleAccent: "публікацій",
-
       intro:
         "Основні технічні вимоги до оформлення та подання тез доповідей.",
 
@@ -297,53 +284,61 @@ export const translations = {
         },
       ],
 
-      integrityTitle: "Академічна доброчесність",
+     integrityTitle: "Академічна доброчесність",
 
-      integrityText:
-        "Усі подані матеріали проходять обов’язковий контроль академічної доброчесності та перевірку на наявність текстових запозичень у системі StrikePlagiarism.",
+integrityParagraphs: [
+  "Усі подані матеріали проходять обов’язковий контроль академічної доброчесності та перевірку на наявність текстових запозичень у системі StrikePlagiarism.",
 
-      restrictionsTitle: "Санкційні обмеження",
-
-      restrictionsText:
-        "Категорично заборонено покликання на джерела, видані російською мовою незалежно від країни видання, а також на матеріали, опубліковані суб’єктами видавничої діяльності на території російської федерації та республіки білорусь.",
-
+  "Категорично заборонено покликання на джерела, видані російською мовою незалежно від країни видання, а також на матеріали, опубліковані суб’єктами видавничої діяльності на території російської федерації та республіки білорусь.",
+],
       responsibility:
         "Автори несуть персональну відповідальність за достовірність даних, точність цитування та дотримання авторських прав.",
-
       download: "Завантажити зразок оформлення тез",
     },
+
     registration: {
-  label: "08 / Реєстрація",
-  title: "Приєднуйтесь до",
-  titleAccent: "BFF 2026",
-  text:
-    "Участь у форумі та публікація у збірнику безоплатні. Усі зареєстровані учасники отримають офіційні сертифікати.",
-  button: "Заповнити реєстраційну анкету",
-},
-contacts: {
+      label: "08 / Реєстрація",
+      title: "Приєднуйтесь до",
+      titleAccent: "BFF 2026",
+      text:
+        "Участь у форумі та публікація у збірнику безоплатні. Усі зареєстровані учасники отримають офіційні сертифікати.",
+      button: "Заповнити реєстраційну анкету",
+    },
+
+    contacts: {
   label: "09 / Контакти",
   title: "Контактна",
   titleAccent: "інформація",
 
   intro:
-    "З питань участі, партнерства та подання матеріалів звертайтеся до організаторів форуму.",
+    "З питань участі, партнерства та подання матеріалів звертайтеся до оргкомітету форуму.",
 
   organizerLabel: "Організатор",
   organizer:
     "Київський науково-дослідний інститут судових експертиз Міністерства юстиції України",
 
-  addressLabel: "Адреса",
+  addressLabel: "Адреса оргкомітету",
   address:
-    "03057, Україна, м. Київ, вул. Сім'ї Бродських, 6",
+    "03057, м. Київ, вул. Сім'ї Бродських, 6, Київський науково-дослідний інститут судових експертиз Міністерства юстиції України",
 
-  coordinatorLabel: "Координатор заходу",
-  coordinator:
-    "Олена Агапова — доктор юридичних наук, заступник директора з наукової роботи КНДІСЕ",
+  contactsLabel: "Телефони для довідок",
 
-  phoneLabel: "Телефон",
-  phone: "+38 (044) [номер]",
+  coordinators: [
+    {
+      name: "Олена Агапова",
+      phone: "+38 093 677 76 20",
+      description:
+        "координаторка заходу, докторка юридичних наук, заступниця директора з наукової роботи КНДІСЕ",
+    },
+    {
+      name: "Сергій Русаков",
+      phone: "+38 067 440 85 91",
+      description:
+        "кандидат філософських наук, доцент, завідувач лабораторії наукової діяльності, підготовки експертів та міжнародного співробітництва КНДІСЕ",
+    },
+  ],
 
-  emailLabel: "E-mail координатора",
+  emailLabel: "E-mail координаторки",
   email: "olena.agapova@kndise.gov.ua",
 
   papersLabel: "E-mail для тез",
@@ -351,19 +346,17 @@ contacts: {
 
   websiteLabel: "Офіційний сайт",
   website: "BFF2026.digest.kndise.gov.ua",
-
-  mapTitle: "Локація форуму",
 },
-footer: {
-  copyright:
-    "© 2026 Київський науково-дослідний інститут судових експертиз Міністерства юстиції України. Всі права захищено.",
 
-  privacy: "Політика конфіденційності",
-  ministry: "Офіційний портал Мін'юсту",
-  kndise: "КНДІСЕ",
-  repository: "Репозитарій КНДІСЕ",
-  social: "Соціальні мережі",
-},
+    footer: {
+      copyright:
+        "© 2026 Київський науково-дослідний інститут судових експертиз Міністерства юстиції України. Всі права захищено.",
+      privacy: "Політика конфіденційності",
+      ministry: "Офіційний портал Мін'юсту",
+      kndise: "КНДІСЕ",
+      repository: "Репозитарій КНДІСЕ",
+      social: "Соціальні мережі",
+    },
   },
 
   en: {
@@ -382,6 +375,9 @@ footer: {
     },
 
     hero: {
+      institute:
+        "KYIV SCIENTIFIC RESEARCH INSTITUTE OF FORENSIC EXPERTISE OF THE MINISTRY OF JUSTICE OF UKRAINE",
+
       kicker: "Ministry of Justice of Ukraine · KNDIFE",
 
       title1: "BLOCKCHAIN",
@@ -453,40 +449,32 @@ footer: {
         {
           number: "01",
           badge: "BLOCKCHAIN FORENSICS",
-
           title:
             "Blockchain Forensics: methods and approaches to digital evidence analysis",
-
           description:
             "Technical aspects of identifying and examining digital traces in blockchain environments.",
-
           topics: [
             "Transaction deanonymization and address clustering",
             "Working with mixers and cross-chain bridges",
             "Smart contract vulnerability analysis",
             "Specialized forensic software",
           ],
-
           footer: "PANEL 01",
         },
 
         {
           number: "02",
           badge: "CRIMINAL JUSTICE",
-
           title:
             "Interaction between criminal justice actors in cases involving blockchain technologies",
-
           description:
             "Legal and procedural mechanisms for working with virtual assets and digital evidence.",
-
           topics: [
             "Temporary access, seizure and confiscation of virtual assets",
             "Standardization of forensic expert conclusions in court practice",
             "Damage assessment and evidentiary value of digital data",
             "International legal cooperation and cross-border data exchange",
           ],
-
           footer: "PANEL 02",
         },
       ],
@@ -544,40 +532,33 @@ footer: {
       label: "04 / Speakers and Experts",
       title: "Forum",
       titleAccent: "speakers",
-
       intro:
         "Leading industry experts, researchers and practitioners in blockchain investigations.",
-
       notice:
         "The list of speakers and the final presentation schedule are updated continuously. Speaker registration is open until 9 October 2026.",
-
       apply: "Apply as a speaker",
     },
 
     partners: {
-      label: "05 / Forum Partners",
-      title: "Partners and",
-      titleAccent: "support",
+  label: "05 / Partners",
+  title: "Forum",
+  titleAccent: "partners",
 
-      intro:
-        "Institutional, technological and media cooperation.",
+  intro:
+    "Organizations and institutions supporting Blockchain Forensics Forum 2026.",
 
-      organizers: "Organizers",
-      institutional: "Institutional and Academic Partners",
-      technology: "Technology Partners",
-      media: "Media Partners",
+  listTitle: "Partners",
 
-      becomePartner: "Become a forum partner",
+  becomePartner: "Become a forum partner",
 
-      partnerText:
-        "Would you like to support or join the organization of the forum? Contact us at olena.agapova@kndise.gov.ua with the subject “BFF-2026 Partnership”.",
-    },
+  partnerText:
+    "Would you like to support or join the organization of the forum? Contact us at olena.agapova@kndise.gov.ua with the subject “BFF-2026 Partnership”.",
+},
 
     timeline: {
       label: "06 / Key Dates",
       title: "Forum",
       titleAccent: "timeline",
-
       intro:
         "Key deadlines and milestones for participation in Blockchain Forensics Forum 2026.",
 
@@ -619,7 +600,6 @@ footer: {
       label: "07 / For Authors",
       title: "Publication",
       titleAccent: "requirements",
-
       intro:
         "Key technical requirements for preparing and submitting forum abstracts.",
 
@@ -667,49 +647,57 @@ footer: {
 
       integrityTitle: "Academic integrity",
 
-      integrityText:
-        "All submitted materials undergo mandatory academic integrity screening and plagiarism detection using StrikePlagiarism.",
+integrityParagraphs: [
+  "All submitted materials undergo mandatory academic integrity screening and plagiarism detection using StrikePlagiarism.",
 
-      restrictionsTitle: "Sanctions restrictions",
-
-      restrictionsText:
-        "References to sources published in Russian are strictly prohibited regardless of the country of publication, as are materials issued by publishing entities operating in the Russian Federation or the Republic of Belarus.",
-
+  "References to sources published in Russian are strictly prohibited regardless of the country of publication, as are materials issued by publishing entities operating in the Russian Federation or the Republic of Belarus.",
+],
       responsibility:
         "Authors are personally responsible for data accuracy, citation accuracy and compliance with copyright requirements.",
-
       download: "Download abstract template",
     },
+
     registration: {
-  label: "08 / Registration",
-  title: "Join",
-  titleAccent: "BFF 2026",
-  text:
-    "Participation in the forum and publication in the proceedings are free of charge. All registered participants will receive official certificates.",
-  button: "Complete registration form",
-},
-contacts: {
+      label: "08 / Registration",
+      title: "Join",
+      titleAccent: "BFF 2026",
+      text:
+        "Participation in the forum and publication in the proceedings are free of charge. All registered participants will receive official certificates.",
+      button: "Complete registration form",
+    },
+
+    contacts: {
   label: "09 / Contacts",
   title: "Contact",
   titleAccent: "information",
 
   intro:
-    "For participation, partnership and publication inquiries, please contact the forum organizers.",
+    "For participation, partnership and publication inquiries, please contact the forum organizing committee.",
 
   organizerLabel: "Organizer",
   organizer:
     "Kyiv Scientific Research Institute of Forensic Expertise of the Ministry of Justice of Ukraine",
 
-  addressLabel: "Address",
+  addressLabel: "Organizing committee address",
   address:
-    "6 Simyi Brodskykh St., Kyiv, 03057, Ukraine",
+    "6 Simyi Brodskykh St., Kyiv, 03057, Kyiv Scientific Research Institute of Forensic Expertise of the Ministry of Justice of Ukraine",
 
-  coordinatorLabel: "Forum coordinator",
-  coordinator:
-    "Olena Ahapova — Doctor of Law, Deputy Director for Research at KNDIFE",
+  contactsLabel: "Contact phones",
 
-  phoneLabel: "Phone",
-  phone: "+38 (044) [number]",
+  coordinators: [
+    {
+      name: "Olena Ahapova",
+      phone: "+38 093 677 76 20",
+      description:
+        "forum coordinator, Doctor of Law, Deputy Director for Research at KNDIFE",
+    },
+    {
+      name: "Serhii Rusakov",
+      phone: "+38 067 440 85 91",
+      description:
+        "PhD in Philosophy, Associate Professor, Head of the Laboratory for Research Activities, Expert Training and International Cooperation at KNDIFE",
+    },
+  ],
 
   emailLabel: "Coordinator e-mail",
   email: "olena.agapova@kndise.gov.ua",
@@ -719,19 +707,17 @@ contacts: {
 
   websiteLabel: "Official website",
   website: "BFF2026.digest.kndise.gov.ua",
-
-  mapTitle: "Forum location",
 },
-footer: {
-  copyright:
-    "© 2026 Kyiv Scientific Research Institute of Forensic Expertise of the Ministry of Justice of Ukraine. All rights reserved.",
 
-  privacy: "Privacy Policy",
-  ministry: "Ministry of Justice",
-  kndise: "KNDIFE",
-  repository: "KNDIFE Repository",
-  social: "Social media",
-},
+    footer: {
+      copyright:
+        "© 2026 Kyiv Scientific Research Institute of Forensic Expertise of the Ministry of Justice of Ukraine. All rights reserved.",
+      privacy: "Privacy Policy",
+      ministry: "Ministry of Justice",
+      kndise: "KNDIFE",
+      repository: "KNDIFE Repository",
+      social: "Social media",
+    },
   },
 } as const;
 
