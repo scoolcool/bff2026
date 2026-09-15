@@ -55,7 +55,18 @@
 .about-heading .section-title span {
   display: block;
 }
+.about-institute-logo {
+  margin-bottom: 28px;
+}
 
+.about-institute-logo img {
+  width: auto;
+  height: 64px;
+
+  object-fit: contain;
+
+  opacity: 0.95;
+}
 
 /* ========================================
    COPY
@@ -312,5 +323,14 @@
 
   .stat-number {
     font-size: 34px;
+  }
+}
+@media (max-width: 760px) {
+  .about-institute-logo {
+    margin-bottom: 22px;
+  }
+
+  .about-institute-logo img {
+    height: 52px;
   }
 }

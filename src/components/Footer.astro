@@ -20,6 +20,7 @@ const isEnglish = lang === "en";
     <div class="footer-top">
 
       <div class="footer-brand">
+
         <div class="footer-logos">
           <img
             src="/images/logos/kndise.svg"
@@ -37,6 +38,15 @@ const isEnglish = lang === "en";
         <p>
           {t.copyright}
         </p>
+
+        <p class="footer-registration-note">
+          {
+            isEnglish
+              ? 'The scientific forum is registered by the State Institution "Ukrainian Institute of Scientific and Technical Expertise and Information" (Certificate No. 639 dated 15 September 2026).'
+              : 'Науковий форум зареєстровано державною установою «Український інститут науково-технічної експертизи та інформації» (посвідчення № 639 від 15 вересня 2026 р.).'
+          }
+        </p>
+
       </div>
 
       <nav class="footer-nav">

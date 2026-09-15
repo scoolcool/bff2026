@@ -1,7 +1,7 @@
 export const speakers = [
   {
     id: "maksym-kyselov",
-    photo: "/images/speakers/kyselov.jpg",
+    photo: "/images/speakers/kyselov.jpeg",
 
     panel: {
       uk: "Панель 1",
@@ -66,4 +66,70 @@ export const speakers = [
 
     imagePosition: "48% 38%",
   },
+  {
+  id: "olha-lukova",
+  photo: "/images/speakers/lukova.jpeg",
+
+  panel: {
+    uk: "Панель уточнюється",
+    en: "Panel to be confirmed",
+  },
+
+  panelShort: "--",
+
+  name: {
+    uk: "Ольга Лукова",
+    en: "Olha Lukova",
+  },
+
+  degree: {
+    uk: "",
+    en: "",
+  },
+
+  position: {
+    uk: "завідувачка лабораторії економічних досліджень Київського науково-дослідного інституту судових експертиз Міністерства юстиції України",
+    en: "Head of the Laboratory of Economic Research at the Kyiv Scientific Research Institute of Forensic Expertise of the Ministry of Justice of Ukraine",
+  },
+
+  topic: {
+    uk: "Тема уточнюється",
+    en: "Topic to be confirmed",
+  },
+
+  imagePosition: "50% 35%",
+},
+{
+  id: "olena-agapova",
+  photo: "/images/speakers/agapova.jpeg",
+
+  panel: {
+    uk: "Модераторка заходу",
+    en: "Forum moderator",
+  },
+
+  panelShort: "MOD",
+
+  name: {
+    uk: "Олена Агапова",
+    en: "Olena Ahapova",
+  },
+
+  degree: {
+    uk: "докторка юридичних наук",
+    en: "Doctor of Law",
+  },
+
+  position: {
+    uk: "заступниця директора з наукової роботи Київського науково-дослідного інституту судових експертиз Міністерства юстиції України",
+    en: "Deputy Director for Research at the Kyiv Scientific Research Institute of Forensic Expertise of the Ministry of Justice of Ukraine",
+  },
+
+  topic: {
+    uk: "Модераторка заходу",
+    en: "Forum moderator",
+  },
+
+  imagePosition: "78% 30%",
+},
 ] as const;

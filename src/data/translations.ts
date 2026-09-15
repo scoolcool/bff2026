@@ -121,8 +121,8 @@ export const translations = {
 
     audience: {
       label: "03 / Учасники заходу",
-      title: "Для кого цей",
-      titleAccent: "форум",
+      title: "Для кого ",
+      titleAccent: "цей форум",
 
       intro:
         "До участі запрошуються фахівці теоретичного та прикладного профілю.",
@@ -270,7 +270,7 @@ export const translations = {
         {
           title: "Список літератури",
           text:
-            "У порядку згадування згідно з ДСТУ 8302:2015 або APA 7th ed. Посилання у тексті: [1, с. 45].",
+            "У порядку згадування згідно з ДСТУ 8302:2015. Посилання у тексті: [1, с. 45].",
         },
         {
           title: "Назва файлу",
@@ -631,7 +631,7 @@ integrityParagraphs: [
         {
           title: "References",
           text:
-            "Listed in order of citation according to DSTU 8302:2015 or APA 7th edition. In-text references: [1, p. 45].",
+            "Listed in order of citation according to DSTU 8302:2015. In-text references: [1, p. 45].",
         },
         {
           title: "File name",

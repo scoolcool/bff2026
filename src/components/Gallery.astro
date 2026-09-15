@@ -1,0 +1,105 @@
+---
+import "../styles/gallery.css";
+
+interface Props {
+  lang?: "uk" | "en";
+}
+
+const { lang = "uk" } = Astro.props;
+
+const images = Array.from({ length: 10 }, (_, i) => {
+  const number = String(i + 1).padStart(2, "0");
+
+  return {
+    src: `/images/gallery/bff-2025-${number}.webp`,
+    alt:
+      lang === "en"
+        ? `Blockchain Forensics Forum 2025 photo ${i + 1}`
+        : `Blockchain Forensics Forum 2025 — фото ${i + 1}`,
+  };
+});
+---
+
+<section class="section gallery">
+  <div class="gallery-grid"></div>
+
+  <div class="container gallery-inner">
+
+    <div class="gallery-heading">
+      <div class="section-label">
+        BFF 2025
+      </div>
+
+      <h2 class="section-title">
+        BLOCKCHAIN
+        <span>2025</span>
+      </h2>
+    </div>
+
+    <div class="gallery-shell">
+
+      <button
+        class="gallery-arrow gallery-arrow-prev"
+        type="button"
+        aria-label={lang === "en" ? "Previous photos" : "Попередні фото"}
+      >
+        ←
+      </button>
+
+      <div class="gallery-track">
+        {
+          images.map((image) => (
+            <figure class="gallery-slide">
+              <img
+                src={image.src}
+                alt={image.alt}
+                loading="lazy"
+              />
+            </figure>
+          ))
+        }
+      </div>
+
+      <button
+        class="gallery-arrow gallery-arrow-next"
+        type="button"
+        aria-label={lang === "en" ? "Next photos" : "Наступні фото"}
+      >
+        →
+      </button>
+
+    </div>
+
+  </div>
+</section>
+
+<script>
+  const gallery = document.querySelector(".gallery");
+
+  if (gallery) {
+    const track = gallery.querySelector(".gallery-track");
+    const prev = gallery.querySelector(".gallery-arrow-prev");
+    const next = gallery.querySelector(".gallery-arrow-next");
+
+    const scrollGallery = (direction) => {
+      if (!(track instanceof HTMLElement)) return;
+
+      const firstSlide = track.querySelector(".gallery-slide");
+
+      if (!(firstSlide instanceof HTMLElement)) return;
+
+      const styles = getComputedStyle(track);
+      const gap = parseFloat(styles.gap || "0");
+
+      const amount = firstSlide.offsetWidth + gap;
+
+      track.scrollBy({
+        left: direction * amount,
+        behavior: "smooth",
+      });
+    };
+
+    prev?.addEventListener("click", () => scrollGallery(-1));
+    next?.addEventListener("click", () => scrollGallery(1));
+  }
+</script>

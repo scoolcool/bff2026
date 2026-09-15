@@ -166,13 +166,12 @@
   margin-bottom: 9px;
 
   font-family: "Unbounded", sans-serif;
-
   font-size: 14px;
   font-weight: 900;
 
   letter-spacing: 0.01em;
 
-  color: var(--accent);
+  color: #fff;
 }
 
 .contact-person h3 {

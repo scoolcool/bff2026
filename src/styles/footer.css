@@ -97,6 +97,17 @@
   color: rgba(255, 255, 255, 0.44);
 }
 
+.footer-registration-note {
+  max-width: 650px;
+
+  margin: 18px 0 0;
+
+  font-size: 11px;
+  line-height: 1.55;
+
+  color: rgba(255, 255, 255, 0.55);
+}
+
 
 /* ========================================
    NAVIGATION
@@ -280,6 +291,10 @@
 
   .footer-brand p {
     font-size: 11px;
+  }
+
+  .footer-registration-note {
+    font-size: 10px;
   }
 
   .footer-nav {
