@@ -81,7 +81,7 @@ const images = Array.from({ length: 10 }, (_, i) => {
     const prev = gallery.querySelector(".gallery-arrow-prev");
     const next = gallery.querySelector(".gallery-arrow-next");
 
-    const scrollGallery = (direction) => {
+    const scrollGallery = (direction: number) => {
       if (!(track instanceof HTMLElement)) return;
 
       const firstSlide = track.querySelector(".gallery-slide");
